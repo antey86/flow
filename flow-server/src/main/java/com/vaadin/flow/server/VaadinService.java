@@ -1932,7 +1932,7 @@ public abstract class VaadinService implements Serializable {
      * @since 7.1
      */
     public void runPendingAccessTasks(VaadinSession session) {
-        assert session.hasLock();
+        session.checkHasLock();
 
         if (session.getPendingAccessQueue().isEmpty()) {
             return;
